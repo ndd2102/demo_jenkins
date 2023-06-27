@@ -8,7 +8,7 @@ pipeline {
         }
         stage('push') {
             steps {
-                withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') {
+                withDockerRegistry(credentialsId: 'docker-hub') {
                     sh 'docker build -t nddung2102/demo-jenkins .'
                     sh 'docker push -t nddung2102/demo-jenkins .'
                 }
