@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('clone') {
+        stage('Clone') {
             steps {
-                git 'https://github.com/ndd2102/demo_jenkins'
+                git 'https://github.com/ndd2102/demo_jenkins.git'
             }
         }
     }
