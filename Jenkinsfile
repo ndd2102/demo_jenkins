@@ -17,12 +17,12 @@ pipeline {
          }
          stage('Login') {
              steps {
-                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+                 sh 'sudo echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
              }
          }
          stage('push') {
              steps {
-                 sh 'docker push -t nddung2102/demo-jenkins .'
+                 sh 'sudo docker push -t nddung2102/demo-jenkins .'
              }
          }
     }
