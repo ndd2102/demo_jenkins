@@ -11,8 +11,10 @@ pipeline {
         }
         stage('Build') {
              steps {
-                    
-                 sh 'docker build -t nddung2102/demo-jenkins .'
+                sh 'sudo usermod -aG docker nddung2102'
+                 sh 'sudo docker build -t nddung2102/demo-jenkins .'
+                 
+'
              }
          }
          stage('Login') {
