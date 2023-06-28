@@ -22,7 +22,7 @@ pipeline {
          }
          stage('push') {
              steps {
-                 sh 'sudo docker push -t nddung2102/demo-jenkins .'
+                 sh 'sudo docker push nddung2102/demo-jenkins .'
              }
          }
     }
