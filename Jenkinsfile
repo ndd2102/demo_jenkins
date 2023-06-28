@@ -13,8 +13,6 @@ pipeline {
              steps {
                 
                  sh 'sudo docker build -t nddung2102/demo-jenkins .'
-                 
-'
              }
          }
          stage('Login') {
