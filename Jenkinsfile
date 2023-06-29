@@ -22,7 +22,6 @@ pipeline {
          }
          stage('push') {
              steps {
-                //  sh 'sudo docker tag demo-jenkins nddung2102/demo-jenkins'
                  sh 'docker push nddung2102/demo-jenkins'
              }
          }
