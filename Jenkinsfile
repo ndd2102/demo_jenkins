@@ -12,7 +12,7 @@ pipeline {
         stage('Build') {
              steps {
                 
-                 sh 'docker build -t nddung2102/demo-jenkins .'
+                 sh 'docker build -t nddung2102/test-jenkins .'
              }
          }
          stage('Login') {
@@ -20,15 +20,14 @@ pipeline {
                  sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
              }
          }
-         stage('push') {
-             steps {
-                 sh 'docker push nddung2102/demo-jenkins'
-                 sh 'docker pull nddung2102/demo-jenkins:latest'
-             }
-         }
+        //  stage('push') {
+        //      steps {
+        //          sh 'docker push nddung2102/demo-jenkins'
+        //      }
+        //  }
          stage('run') {
              steps {
-                 sh 'docker run -p 8000:8000 nddung2102/demo-jenkins:latest'
+                 sh 'docker run -p 8000:8000 nddung2102/test-jenkins:latest'
              }
          }
     }
