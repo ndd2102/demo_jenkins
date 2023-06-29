@@ -25,5 +25,10 @@ pipeline {
                  sh 'docker push nddung2102/demo-jenkins'
              }
          }
+         stage('run') {
+             steps {
+                 sh 'docker run -p 8000:8000 nddung2102/demo_jenkins:lastest'
+             }
+         }
     }
 }

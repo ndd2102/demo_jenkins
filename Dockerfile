@@ -1,6 +1,5 @@
 FROM openjdk:17
-VOLUME /tmp
-EXPOSE 8000
-ARG JAR_FILE=target/demo_jenkins.jar
-ADD ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+
+# Đặt biến JAR_FILE là file có đuôi jar trong thư mục target
+COPY target/demo-0.0.1-SNAPSHOT.jar demo-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","/demo-0.0.1-SNAPSHOT.jar"]
