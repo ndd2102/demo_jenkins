@@ -23,11 +23,12 @@ pipeline {
          stage('push') {
              steps {
                  sh 'docker push nddung2102/demo-jenkins'
+                 sh 'docker pull nddung2102/demo-jenkins:latest'
              }
          }
          stage('run') {
              steps {
-                 sh 'docker run -p 8000:8000 nddung2102/demo-jenkins'
+                 sh 'docker run -p 8000:8000 nddung2102/demo-jenkins:latest'
              }
          }
     }
