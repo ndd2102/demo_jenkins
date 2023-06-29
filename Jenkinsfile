@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
              steps {
                 
-                 sh 'sudo docker build -t nddung2102/demo-jenkins .'
+                 sh 'sudo docker build -t demo-jenkins .'
              }
          }
          stage('Login') {
