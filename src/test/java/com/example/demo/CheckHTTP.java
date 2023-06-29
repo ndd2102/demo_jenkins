@@ -16,7 +16,7 @@ public class CheckHTTP {
     private TestRestTemplate testRestTemplate;
     @Test
     public void shouldPassIfStringMatches() {
-        assertEquals("Hello World", 
+        assertEquals("Hello Worldddddd", 
         testRestTemplate.getForObject("http://localhost:" + port + "/", String.class));
     }
 }
