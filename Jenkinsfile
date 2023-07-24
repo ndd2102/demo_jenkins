@@ -29,7 +29,7 @@ pipeline {
         //  }
          stage('run') {
              steps {
-                 bat 'docker run -p 8000:8000 nddung2102/test-jenkins:latest'
+                 bat 'docker run -dp 8000:8000 nddung2102/test-jenkins:latest'
              }
          }
     }
