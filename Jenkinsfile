@@ -29,7 +29,7 @@ pipeline {
         //  }
          stage('run') {
              steps {
-                bat 'docker stop flamboyant_maxwell' 
+                bat 'docker stop demo_jenkins' 
                 bat 'docker run --name demo_jenkins -dp 8000:8000 nddung2102/test-jenkins:latest'
              }
          }
