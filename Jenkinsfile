@@ -29,7 +29,7 @@ pipeline {
         //  }
          stage('run') {
              steps {
-                 bat 'docker run --name demo_jenkins -dp 8000:8000 nddung2102/test-jenkins:latest'
+                 docker.image('nddung2102/test-jenkins').withRun('--rm -p 8000:8000')
              }
          }
     }
