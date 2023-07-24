@@ -7,14 +7,14 @@ pipeline {
         stage('Clone') {
             steps {
                 git branch: 'main', url: 'https://github.com/ndd2102/demo_jenkins.git'
-                sh "mvn clean"
-                sh "mvn package"
+                bat "mvn clean"
+                bat "mvn package"
             }
         }
         stage('Build') {
              steps {
                 
-                 sh 'docker build -t nddung2102/test-jenkins .'
+                 bat 'docker build -t nddung2102/test-jenkins .'
              }
          }
         //  stage('Login') {
@@ -29,7 +29,7 @@ pipeline {
         //  }
          stage('run') {
              steps {
-                 sh 'docker run -p 8000:8000 nddung2102/test-jenkins:latest'
+                 bat 'docker run -p 8000:8000 nddung2102/test-jenkins:latest'
              }
          }
     }
