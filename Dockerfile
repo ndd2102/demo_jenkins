@@ -1,4 +1,4 @@
-FROM maven:3.8.1-jdk-17-slim AS build
+FROM maven:3.8.1-openjdk-17-slim AS build
 COPY . .
 RUN mvn clean
 RUN mvn package
