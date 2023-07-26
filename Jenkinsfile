@@ -11,27 +11,12 @@ pipeline {
                 // bat "mvn package"
             }
         }
-        stage('Build') {
+        stage('Build and run') {
              steps {
                 
-                 bat 'docker build -t nddung2102/test-jenkins .'
+                 bat 'docker compose up -d --build'
              }
          }
-        //  stage('Login') {
-        //      steps {
-        //          sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-        //      }
-        //  }
-        //  stage('push') {
-        //      steps {
-        //          sh 'docker push nddung2102/demo-jenkins'
-        //      }
-        //  }
-         stage('run') {
-             steps {
-                bat 'docker rm demo_jenkins' 
-                bat 'docker run --name demo_jenkins -dp 8000:8000 nddung2102/test-jenkins:latest'
-             }
-         }
+       
     }
 }

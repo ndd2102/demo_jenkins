@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+  demo-jenkins:
+    container_name: demo_jenkins
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
